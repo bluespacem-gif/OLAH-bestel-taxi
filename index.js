@@ -63,9 +63,9 @@ function apiKeyTimestampMiddleware(req, res, next) {
   const tsNum = Number(timestamp);
   if (!Number.isFinite(tsNum)) return res.status(400).send("Invalid timestamp");
 
-  const nowSec = Math.floor(Date.now() / 1000);
-  if (Math.abs(nowSec - tsNum) > ALLOWED_WINDOW_SEC)
-    return res.status(401).send("Stale timestamp");
+  ///const nowSec = Math.floor(Date.now() / 1000);
+  //if (Math.abs(nowSec - tsNum) > ALLOWED_WINDOW_SEC)
+  //  return res.status(401).send("Stale timestamp");
 
   next();
 }
