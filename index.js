@@ -86,7 +86,7 @@ app.post("/request", apiKeyTimestampMiddleware, async (req, res) => {
     const body = `الجهاز ذو الرقم ${serial} المركب بمكان ${location} طلب سيارة ${type} في ${timeStr}`;
 
     const fcmPayload = {
-      topic: "requests",
+      topic: "bestel",
       notification: { title, body },
       data: { serial, location, type, time: timeStr }
     };
