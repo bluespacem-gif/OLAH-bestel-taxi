@@ -81,9 +81,9 @@ app.post("/request", apiKeyTimestampMiddleware, async (req, res) => {
       return res.status(403).send("Device blocked");
     }
 
-    const timeStr = new Date().toLocaleString("ar-SY", { timeZone: "Asia/Damascus" });
-    const title = `🚕 طلب سيارة نوع ${type}`;
-    const body = `الجهاز ذو الرقم ${serial} المركب بمكان ${location} طلب سيارة ${type} في ${timeStr}`;
+    const timeStr = new Date().toLocaleString("de-BE", { timeZone: "Europe/Brussels" });
+    const title = `Vraag een taxitype aan: ${type}`;
+    const body = `Apparaat met serienummer ${serial} Het complex is op zijn plaats ${location} Vraag een taxitype aan ${type}, ${timeStr}`;
 
     const fcmPayload = {
       topic: "bestel",
