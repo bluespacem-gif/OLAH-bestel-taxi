@@ -3,7 +3,7 @@
  *******************************************************************/
 const express = require("express");
 const fetch = require("node-fetch");
-const { google } = require("google-auth-library");
+const { JWT } = require("google-auth-library");
 const app = express();
 app.use(express.json());
 
@@ -25,7 +25,7 @@ let blockedSerials = [];
 
 // =============== مصادقة FCM HTTP v1 ==============================
 async function getAccessToken() {
-  const client = new google.auth.JWT({
+  const client = new JWT({
     email: serviceAccount.client_email,
     key: serviceAccount.private_key,
     scopes: ["https://www.googleapis.com/auth/firebase.messaging"],
